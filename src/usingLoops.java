@@ -20,6 +20,25 @@ public class usingLoops {
         }
     }
 
+    public static void printC(int len, char ch, char fillChar) {
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                if (i == 0 || j == len - 1 || i == j) {
+                    System.out.print(ch);
+                } else {
+                    if (i > j) {
+                        System.out.print(" ");
+                    } else {
+                        System.out.print(fillChar);
+                    }
+                }
+                if (j == len - 1) {
+                    System.out.println();
+                }
+            }
+        }
+    }
+
     public static void printF(int len, char ch, char fillChar) {
         for (int i = 0; i < len; i++) {
             for (int j = 0; j < len; j++) {
@@ -43,10 +62,19 @@ public class usingLoops {
         int len = 8;
         char borderChar = '*';
         char fillChar = ' ';
+
         printA(len, borderChar, fillChar);
         System.out.println("");
         printA(len, borderChar, borderChar);
+
         System.out.println("");
+
+        printC(len, borderChar, fillChar);
+        System.out.println("");
+        printC(len, borderChar, borderChar);
+
+        System.out.println("");
+
         printF(len, borderChar, fillChar);
         System.out.println("");
         printF(len, borderChar, borderChar);
