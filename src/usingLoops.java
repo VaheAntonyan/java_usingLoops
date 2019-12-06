@@ -134,6 +134,25 @@ public class usingLoops {
         }
     }
 
+    public static void printH(int height, char ch, char fillChar) {
+        for (int i = 0; i < height * 2 - 1; i++) {
+            for (int j = 0; j < height; j++) {
+                if ((i < height && j == i) || (i >= height && i == height * 2 - 2 - j) || j == 0) {
+                    System.out.print(ch);
+                } else {
+                    if ((i < height && j > i) || (i >= height && i > height * 2 - 2 - j)) {
+                        System.out.print(" ");
+                    } else {
+                        System.out.print(fillChar);
+                    }
+                }
+                if (j == height - 1) {
+                    System.out.println();
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int len = 8;
         char borderChar = '*';
@@ -180,6 +199,12 @@ public class usingLoops {
         printG(height, borderChar, fillChar);
         System.out.println("");
         printG(height, borderChar, borderChar);
+        System.out.println("");
+
+        //printH()
+        printH(height, borderChar, fillChar);
+        System.out.println("");
+        printH(height, borderChar, borderChar);
         System.out.println("");
     }
 }
