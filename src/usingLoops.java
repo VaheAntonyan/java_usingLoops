@@ -20,6 +20,25 @@ public class usingLoops {
         }
     }
 
+    public static void printB(int height, char ch, char fillChar) {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < height * 2 - 1; j++) {
+                if (height - 1 - i == j || j == height - 1 + i || i == height - 1) {
+                    System.out.print(ch);
+                } else {
+                    if (j < height - 1 - i || j > height - 1 + i) {
+                        System.out.print(" ");
+                    } else {
+                        System.out.print(fillChar);
+                    }
+                }
+                if (j == height * 2 - 2) {
+                    System.out.println();
+                }
+            }
+        }
+    }
+
     public static void printC(int len, char ch, char fillChar) {
         for (int i = 0; i < len; i++) {
             for (int j = 0; j < len; j++) {
@@ -81,10 +100,17 @@ public class usingLoops {
         int len = 8;
         char borderChar = '*';
         char fillChar = ' ';
+        int height = 7;
         //printA()
         printA(len, borderChar, fillChar);
         System.out.println("");
         printA(len, borderChar, borderChar);
+        System.out.println("");
+
+        //printB()
+        printB(height, borderChar, fillChar);
+        System.out.println("");
+        printB(height, borderChar, borderChar);
         System.out.println("");
 
         //printC()
