@@ -77,6 +77,25 @@ public class usingLoops {
         }
     }
 
+    public static void printE(int height, char ch, char fillChar) {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < height * 2 - 1; j++) {
+                if (j == i || j == height * 2 - 2 - i || i == 0) {
+                    System.out.print(ch);
+                } else {
+                    if (j < i || j > height * 2 - 2 - i) {
+                        System.out.print(" ");
+                    } else {
+                        System.out.print(fillChar);
+                    }
+                }
+                if (j == height * 2 - 2) {
+                    System.out.println();
+                }
+            }
+        }
+    }
+
     public static void printF(int len, char ch, char fillChar) {
         for (int i = 0; i < len; i++) {
             for (int j = 0; j < len; j++) {
@@ -123,6 +142,12 @@ public class usingLoops {
         printD(len, borderChar, fillChar);
         System.out.println("");
         printD(len, borderChar, borderChar);
+        System.out.println("");
+
+        //printE()
+        printE(height, borderChar, fillChar);
+        System.out.println("");
+        printE(height, borderChar, borderChar);
         System.out.println("");
 
         //printF()
